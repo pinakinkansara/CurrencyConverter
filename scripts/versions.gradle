@@ -1,0 +1,38 @@
+
+def versions = [:]
+
+versions.kotlin = "1.5.0"
+versions.coroutine = "1.3.2"
+versions.gradle = '4.2.1'
+versions.google_service = '4.3.2'
+
+versions.appcompat = '1.3.0'
+versions.core_ktx = "1.5.0"
+versions.constraint_layout = "2.0.4"
+versions.swipe_refresh_layout = "1.0.0"
+versions.pelette = "1.0.0"
+
+versions.material = "1.3.0"
+versions.navigation = "2.3.5"
+versions.fragment = "1.2.0-rc03"
+versions.viewmodel = "2.4.0-alpha01"
+versions.lifecycle = "2.4.0-alpha01"
+versions.livedata = "2.4.0-alpha01"
+versions.room = "2.3.0"
+versions.datastore= "1.0.0-beta01"
+
+versions.retrofit = "2.9.0"
+versions.logging_inteceptor = "3.8.0"
+versions.firebase = "17.2.1"
+versions.fcm = "20.0.1"
+
+versions.coil = "1.2.1"
+
+versions.hilt = "2.35"
+
+versions.junit = "4.13.2"
+versions.ext_junit = "1.1.2"
+versions.espresso = "3.3.0"
+versions.runner = "1.2.0"
+
+ext.versions = versions
