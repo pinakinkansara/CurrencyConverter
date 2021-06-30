@@ -1,7 +1,6 @@
 package com.pinakin.currencyconverter.di
 
-import com.pinakin.currencyconverter.data.local.CurrencyConverterDB
-import com.pinakin.currencyconverter.data.remote.CurrencyConverterApi
+import com.pinakin.currencyconverter.datasource.LocalDataSource
 import com.pinakin.currencyconverter.repository.CurrencyConverterRepository
 import dagger.Module
 import dagger.Provides
@@ -15,8 +14,8 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideCurrencyRepository(api: CurrencyConverterApi, db: CurrencyConverterDB) =
+    fun provideCurrencyRepository(localDataSource: LocalDataSource) =
         CurrencyConverterRepository(
-            db, api
+            localDataSource
         )
 }

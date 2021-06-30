@@ -36,5 +36,6 @@ versions.junit = "4.13.2"
 versions.ext_junit = "1.1.2"
 versions.espresso = "3.3.0"
 versions.runner = "1.2.0"
+versions.arch_core_test = "2.1.0"
 
 ext.versions = versions

@@ -22,12 +22,12 @@ class CurrencyConverterViewModel @Inject constructor(
             initialValue = ""
         )
 
-    val currencies = repository.getCurrencies().shareIn(
+    val currencies = repository.currencies.shareIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000)
     )
 
-    val exchangeRates = repository.getExchangeRates().shareIn(
+    val exchangeRates = repository.exchangeRates.shareIn(
         scope = viewModelScope,
         started = SharingStarted.WhileSubscribed(5000)
     )

@@ -3,6 +3,7 @@ package com.pinakin.currencyconverter.ui.converter
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -61,6 +62,13 @@ class CurrencyConverterFragment : Fragment(R.layout.fragment_currency_converter)
 
         btnConvert.setOnClickListener {
             convert()
+        }
+
+        edtSourceAmount.doAfterTextChanged {
+            val amount = it.toString()
+            if(amount.isEmpty()){
+                edtDestAmount.text?.clear()
+            }
         }
 
         collectCurrenciesFlow()

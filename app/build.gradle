@@ -19,6 +19,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
     }
 
     buildTypes {
@@ -79,4 +87,8 @@ dependencies {
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.ext_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
+    testImplementation("androidx.room:room-testing:$versions.room")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:$versions.hilt")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:$versions.hilt")
+    androidTestImplementation "androidx.arch.core:core-testing:$versions.arch_core_test"
 }
