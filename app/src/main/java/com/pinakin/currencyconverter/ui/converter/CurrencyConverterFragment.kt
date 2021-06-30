@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -16,7 +18,6 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.pinakin.currencyconverter.R
-import com.pinakin.currencyconverter.ui.CurrencyConverterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -54,9 +55,19 @@ class CurrencyConverterFragment : Fragment(R.layout.fragment_currency_converter)
 
         recConversationRate = view.findViewById(R.id.rec_conversations)
         adapter = ExchangeRateAdapter()
-        recConversationRate.layoutManager = LinearLayoutManager(requireContext())
-        recConversationRate.adapter = adapter
 
+
+        recConversationRate.addItemDecoration(
+            DividerItemDecoration(context,
+                DividerItemDecoration.HORIZONTAL)
+        )
+        recConversationRate.addItemDecoration(
+            DividerItemDecoration(context,
+                DividerItemDecoration.VERTICAL)
+        )
+
+        recConversationRate.layoutManager = GridLayoutManager(requireContext(),3)
+        recConversationRate.adapter = adapter
 
         btnConvert = view.findViewById(R.id.btn_convert)
 

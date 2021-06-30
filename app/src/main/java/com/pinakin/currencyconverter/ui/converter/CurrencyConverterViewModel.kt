@@ -1,4 +1,4 @@
-package com.pinakin.currencyconverter.ui
+package com.pinakin.currencyconverter.ui.converter
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

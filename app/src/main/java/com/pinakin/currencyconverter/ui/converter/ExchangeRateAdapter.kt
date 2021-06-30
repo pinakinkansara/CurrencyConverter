@@ -14,6 +14,7 @@ class ExchangeRateAdapter(
 
     class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val textRate: MaterialTextView = item.findViewById(R.id.txt_exchange_rate)
+        val txtCode: MaterialTextView = item.findViewById(R.id.txt_exchange_code)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,8 +26,9 @@ class ExchangeRateAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exchangeRate = exchangeRates[position]
 
-        val rate = "${exchangeRate.code}: ${exchangeRate.rate}"
-        holder.textRate.text = rate
+
+        holder.textRate.text = exchangeRate.rate.toString()
+        holder.txtCode.text = exchangeRate.code
     }
 
     override fun getItemCount(): Int {
