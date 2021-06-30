@@ -30,6 +30,7 @@ versions.fcm = "20.0.1"
 versions.coil = "1.2.1"
 
 versions.hilt = "2.37"
+versions.hilt_compiler = "1.0.0"
 
 versions.junit = "4.13.2"
 versions.ext_junit = "1.1.2"

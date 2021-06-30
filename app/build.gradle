@@ -48,6 +48,7 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$versions.hilt"
     kapt "com.google.dagger:hilt-compiler:$versions.hilt"
 
+
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
     implementation "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
@@ -70,6 +71,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.logging_inteceptor"
 
     implementation("androidx.work:work-runtime-ktx:$versions.work_manager")
+    implementation "androidx.hilt:hilt-work:$versions.hilt_compiler"
+    kapt("androidx.hilt:hilt-compiler:$versions.hilt_compiler")
 
     implementation "io.coil-kt:coil:$versions.coil"
 
