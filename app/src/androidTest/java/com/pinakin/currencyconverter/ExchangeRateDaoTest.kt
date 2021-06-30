@@ -5,8 +5,8 @@ import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.pinakin.currencyconverter.data.local.CurrencyConverterDB
-import com.pinakin.currencyconverter.data.local.dao.CurrencyDao
-import com.pinakin.currencyconverter.data.local.entity.CurrencyEntity
+import com.pinakin.currencyconverter.data.local.dao.ExchangeRateDao
+import com.pinakin.currencyconverter.data.local.entity.ExchangeRateEntity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -17,14 +17,14 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class CurrencyDaoTest {
+class ExchangeRateDaoTest {
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     lateinit var database: CurrencyConverterDB
 
-    private lateinit var currencyDao: CurrencyDao
+    private lateinit var exchangeRateDao: ExchangeRateDao
 
     @Before
     fun setUp() {
@@ -36,7 +36,7 @@ class CurrencyDaoTest {
             CurrencyConverterDB::class.java
         ).allowMainThreadQueries()
             .build()
-        currencyDao = database.getCurrencyDao()
+        exchangeRateDao = database.getExchangeRateDao()
     }
 
     @After
@@ -45,10 +45,12 @@ class CurrencyDaoTest {
     }
 
     @Test
-    fun givenUSDAsCurrencyDBShouldReturnUSD() = runBlocking {
-        val currencyEntity = CurrencyEntity("USD", "Unites States")
-        currencyDao.insert(currencyEntity)
-        val currency = currencyDao.getCurrencies().first()[0]
-        assertEquals(currencyEntity.code, currency)
+    fun givenExchangeRateInINR_DB_ShouldReturn_INR() = runBlocking {
+
+        val exchangeRate = ExchangeRateEntity("INR", 74.24)
+        exchangeRateDao.insert(exchangeRate)
+        val fromDb = exchangeRateDao.getExchangeRates().first()[0]
+        assertEquals(exchangeRate.code, fromDb.code)
+        assertEquals(exchangeRate.rate, fromDb.rate, 0.0)
     }
 }
