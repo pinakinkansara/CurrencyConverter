@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/currency_converter_graph"
+    app:startDestination="@id/currencyConverterFragment">
+
+    <fragment
+        android:id="@+id/currencyConverterFragment"
+        android:name="com.pinakin.currencyconverter.ui.converter.CurrencyConverterFragment"
+        android:label="CurrencyConverter"
+        tools:layout="@layout/fragment_currency_converter" />
+</navigation>

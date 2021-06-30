@@ -20,6 +20,7 @@ versions.lifecycle = "2.4.0-alpha02"
 versions.livedata = "2.4.0-alpha02"
 versions.room = "2.3.0"
 versions.datastore= "1.0.0-beta02"
+versions.work_manager = "2.6.0-beta01"
 
 versions.retrofit = "2.9.0"
 versions.logging_inteceptor = "3.8.0"
@@ -28,7 +29,7 @@ versions.fcm = "20.0.1"
 
 versions.coil = "1.2.1"
 
-versions.hilt = "2.35"
+versions.hilt = "2.37"
 
 versions.junit = "4.13.2"
 versions.ext_junit = "1.1.2"
